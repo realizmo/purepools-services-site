@@ -29,49 +29,6 @@
 }
 .link:hover { color: #fff; }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.toggles {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.langBtn {
-  background: none;
-  border: none;
-  color: #8fb8d4;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  padding: 2px 4px;
-  border-radius: 3px;
-  transition: color var(--t-fast);
-}
-.langBtn:hover { color: #fff; }
-.langActive { color: #fff !important; text-decoration: underline; }
-
-.langDivider { color: #4a7090; font-size: 0.7rem; }
-
-.themeBtn {
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  color: #8fb8d4;
-  cursor: pointer;
-  padding: 2px 5px;
-  margin-left: 4px;
-  border-radius: 3px;
-  transition: color var(--t-fast);
-}
-.themeBtn:hover { color: #fff; }
-
 .cta {
   display: inline-flex;
   align-items: center;

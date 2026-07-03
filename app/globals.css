@@ -47,32 +47,6 @@
   --t-base: 250ms ease;
 }
 
-/* Dark mode overrides */
-[data-theme='dark'] {
-  --color-bg: #0e1a2b;
-  --color-bg-light: #132236;
-  --color-bg-dark: #07101c;
-  --color-text: #e2eaf2;
-  --color-text-muted: #8fa8c0;
-  --color-border: #1e3248;
-  --color-navy: #e2eaf2;
-  --color-white: #0e1a2b;
-}
-
-[data-theme='dark'] h1,
-[data-theme='dark'] h2,
-[data-theme='dark'] h3,
-[data-theme='dark'] h4,
-[data-theme='dark'] h5,
-[data-theme='dark'] h6 {
-  color: #e2eaf2;
-}
-
-[data-theme='dark'] .btn--outline {
-  border-color: #e2eaf2;
-  color: #e2eaf2;
-}
-
 * { box-sizing: border-box; padding: 0; margin: 0; }
 
 html { height: 100%; scroll-behavior: smooth; }

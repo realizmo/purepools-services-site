@@ -2,20 +2,17 @@
  * Footer
  * Three-column footer with contact info, quick links, social links, and service area paragraph.
  */
-'use client';
 import Link from 'next/link';
 import { CONTACT, SERVICE_AREA } from '@/lib/data';
-import { useSite } from '@/lib/SiteContext';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const { tr } = useSite();
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div>
-          <h4 className={styles.heading}>{tr('footer_contact')}</h4>
+          <h4 className={styles.heading}>Contact</h4>
           <ul className={styles.list}>
             <li>
               <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
@@ -27,7 +24,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className={styles.heading}>{tr('footer_links')}</h4>
+          <h4 className={styles.heading}>Quick Links</h4>
           <ul className={styles.list}>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/#reviews">Reviews</Link></li>
@@ -36,7 +33,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className={styles.heading}>{tr('footer_connect')}</h4>
+          <h4 className={styles.heading}>Connect</h4>
           <div className={styles.social}>
             <a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61566849680224" target="_blank" rel="noreferrer noopener"><FbIcon /></a>
             <a aria-label="TikTok" href="https://www.tiktok.com/@pure.pool.servicess?_r=1&_t=ZT-97i9nRfJ4yT" target="_blank" rel="noreferrer noopener"><TkIcon /></a>
@@ -46,12 +43,12 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.area}`}>
-        <h5 className={styles.areaHeading}>{tr('footer_area')}</h5>
+        <h5 className={styles.areaHeading}>Pool Openings All Across Long Island, Call Us Today!</h5>
       </div>
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <span>© {year} {tr('footer_copyright')}</span>
+          <span>© {year} PurePools Services. All Rights Reserved.</span>
           <span>
             <Link href="/privacy">Privacy Policy</Link>
           </span>
