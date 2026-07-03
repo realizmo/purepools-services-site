@@ -1,0 +1,30 @@
+.banner {
+  background:
+    linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  padding: 56px 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(255,255,255,0.10), transparent 50%);
+  pointer-events: none;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.title {
+  color: #fff;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  max-width: 60ch;
+  margin: 0;
+}

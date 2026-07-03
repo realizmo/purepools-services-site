@@ -1,0 +1,127 @@
+.hero {
+  position: relative;
+  height: clamp(520px, 80vh, 760px);
+  width: 100%;
+  overflow: hidden;
+  color: #fff;
+  outline: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  pointer-events: none;
+}
+.slideActive { opacity: 1; }
+
+.bg { object-fit: cover; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,25,45,0.45) 0%, rgba(10,25,45,0.65) 100%),
+    radial-gradient(circle at 30% 40%, rgba(26,158,219,0.25), transparent 60%);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-bottom: 60px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.55rem;
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 20px;
+  animation: rise 600ms ease both;
+}
+
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  max-width: 18ch;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  animation: rise 700ms 80ms ease both;
+}
+
+.subtitle {
+  color: #d6e7f1;
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  max-width: 56ch;
+  margin-top: 16px;
+  animation: rise 700ms 160ms ease both;
+}
+
+.ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  animation: rise 700ms 240ms ease both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background var(--t-fast);
+}
+.arrow:hover { background: rgba(255,255,255,0.3); }
+.arrowLeft { left: 20px; }
+.arrowRight { right: 20px; }
+
+.dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+.dot:hover { background: rgba(255,255,255,0.7); }
+.dotActive { background: #fff; transform: scale(1.25); }
+
+@media (max-width: 700px) {
+  .arrow { display: none; }
+  .content { padding-bottom: 80px; }
+}

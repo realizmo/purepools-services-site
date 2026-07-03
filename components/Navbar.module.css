@@ -1,0 +1,199 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--t-base);
+}
+.scrolled { box-shadow: var(--shadow-sm); }
+
+.inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logoMark {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+.logoTop {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.04em;
+}
+.logoBottom {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: 0.22em;
+  margin-top: 2px;
+}
+
+/* ---------- Desktop nav ---------- */
+.desktopNav { display: none; }
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+.navLink:hover, .navLink:focus-visible {
+  color: var(--color-primary);
+  background: rgba(26,158,219,0.06);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 8px 0;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 10;
+}
+.dropdownOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.dropdownLink {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.dropdownLink:hover { background: var(--color-bg-light); color: var(--color-primary); }
+
+/* ---------- Burger ---------- */
+.burger {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.burgerLine {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--color-navy);
+  border-radius: 2px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+.burgerLine1Open { transform: translateY(8px) rotate(45deg); }
+.burgerLine2Open { opacity: 0; }
+.burgerLine3Open { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- Mobile drawer ---------- */
+.mobileNav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 280ms ease;
+  background: #fff;
+  border-top: 1px solid var(--color-border);
+}
+.mobileNavOpen { max-height: 80vh; overflow-y: auto; }
+
+.mobileList { list-style: none; padding: 8px 0; }
+.mobileItem { border-bottom: 1px solid var(--color-border); }
+.mobileItem:last-child { border-bottom: 0; }
+
+.mobileRow {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.mobileLink {
+  flex: 1;
+  padding: 16px 24px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+.mobileToggle {
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--color-border);
+  color: var(--color-navy);
+}
+.mobileSubList { list-style: none; padding: 0 0 12px; background: var(--color-bg-light); }
+.mobileSubLink {
+  display: block;
+  padding: 12px 36px;
+  font-size: 0.85rem;
+  color: var(--color-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.mobileSubLink:hover { color: var(--color-primary); }
+
+@media (min-width: 1024px) {
+  .desktopNav { display: block; }
+  .burger { display: none; }
+  .mobileNav { display: none; }
+}

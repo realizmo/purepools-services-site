@@ -1,0 +1,115 @@
+.section { padding: var(--section-pad-y) 0; background: var(--color-bg-light); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.info {
+  background: var(--color-navy);
+  color: #d6e7f1;
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  position: sticky;
+  top: calc(var(--header-h) + 12px);
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-primary-light);
+}
+.title { color: #fff; margin: 6px 0 14px; }
+.lead { color: #b6c8d8; font-size: 0.95rem; margin-bottom: 24px; }
+
+.infoList {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.infoList a { color: #fff; }
+.infoList a:hover { color: var(--color-primary-light); }
+.infoLabel {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 4px;
+}
+
+.form {
+  background: #fff;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+.field label {
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--color-text);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 0;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26,158,219,0.18);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: #d33;
+}
+.error {
+  color: #d33;
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.status { color: #1f7a3a; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .info { position: static; }
+  .row { grid-template-columns: 1fr; }
+}

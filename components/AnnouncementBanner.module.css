@@ -1,0 +1,28 @@
+.banner {
+  background: linear-gradient(135deg, #eaf5fc 0%, #f5f8fa 100%);
+  padding: 48px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.copy { flex: 1 1 320px; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--color-primary-dark);
+}
+.title { margin-top: 4px; font-size: clamp(1.5rem, 3vw, 2.25rem); }
+.sub { margin-top: 8px; color: var(--color-text-muted); max-width: 56ch; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
