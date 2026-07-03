@@ -53,7 +53,7 @@ export const SERVICES: ServiceCard[] = [
   },
   {
     title: 'Power Vac',
-    price: '$125.00',
+    price: '$125/hr',
     description:
       'Pool Floor Cleaning and Chemical Balancing (Post-Opening)',
     intro:
