@@ -8,6 +8,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { REVIEWS, type Review } from '@/lib/data';
+import { useSite } from '@/lib/SiteContext';
 import styles from './ReviewsCarousel.module.css';
 
 const AUTO_MS = 7000;
@@ -15,6 +16,7 @@ const GOOGLE_REVIEW_URL =
   'https://search.google.com/local/reviews?placeid=ChIJG1880ddlwokRD9BS52wUR2g';
 
 export default function ReviewsCarousel() {
+  const { tr } = useSite();
   const [reviews, setReviews] = useState<Review[]>(REVIEWS);
   const [overallRating, setOverallRating] = useState<number | null>(null);
   const [totalReviews, setTotalReviews] = useState<number | null>(null);
@@ -54,11 +56,11 @@ export default function ReviewsCarousel() {
     >
       <div className="container">
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Reviews</p>
-          <h2>What Our Customers Say</h2>
+          <p className={styles.eyebrow}>{tr('reviews_eyebrow')}</p>
+          <h2>{tr('reviews_heading')}</h2>
           {overallRating && (
             <p className={styles.overallRating}>
-              <strong>{overallRating.toFixed(1)}</strong> ★ on Google
+              <strong>{overallRating.toFixed(1)}</strong> ★ {tr('reviews_on_google')}
               {totalReviews ? ` · ${totalReviews} reviews` : ''}
             </p>
           )}
@@ -97,9 +99,9 @@ export default function ReviewsCarousel() {
         </div>
 
         <div className={styles.actions}>
-          <Link href="/#reviews" className="btn btn--primary">Read More</Link>
+          <Link href="/#reviews" className="btn btn--primary">{tr('reviews_read_more')}</Link>
           <Link href={GOOGLE_REVIEW_URL} target="_blank" rel="noreferrer noopener" className="btn btn--navy">
-            Leave a Review
+            {tr('reviews_leave')}
           </Link>
         </div>
       </div>

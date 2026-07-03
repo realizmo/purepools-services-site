@@ -7,18 +7,18 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { SERVICES, type ServiceCard } from '@/lib/data';
+import { useSite } from '@/lib/SiteContext';
 import styles from './ServicesGrid.module.css';
 
 export default function ServicesGrid() {
+  const { tr } = useSite();
   return (
     <section className={styles.section} aria-label="Our services" id="services">
       <div className="container">
         <div className={styles.header}>
-          <p className={styles.eyebrow}>What We Do</p>
-          <h2>We Take Care of Your Pool So You Can Enjoy It</h2>
-          <p className={styles.lead}>
-            From repairs to weekly service, we take care of it all.
-          </p>
+          <p className={styles.eyebrow}>{tr('services_eyebrow')}</p>
+          <h2>{tr('services_heading')}</h2>
+          <p className={styles.lead}>{tr('services_lead')}</p>
         </div>
 
         <div className={styles.grid}>
@@ -33,6 +33,7 @@ export default function ServicesGrid() {
 
 function Card({ service }: { service: ServiceCard }) {
   const [open, setOpen] = useState(false);
+  const { tr } = useSite();
   const slug = service.href.split('#')[1] ?? '';
   return (
     <article className={`${styles.card} ${open ? styles.cardOpen : ''}`} id={slug}>
@@ -57,7 +58,7 @@ function Card({ service }: { service: ServiceCard }) {
             {service.price && <span className={styles.price}>{service.price}</span>}
           </div>
           <p className={styles.cardDesc}>{service.description}</p>
-          <span className={styles.toggle}>{open ? 'Show less ▲' : 'Learn more ▼'}</span>
+          <span className={styles.toggle}>{open ? tr('services_show_less') : tr('services_learn_more')}</span>
         </div>
       </button>
 
@@ -77,7 +78,7 @@ function Card({ service }: { service: ServiceCard }) {
 
           {service.closing && <p className={styles.closing}>{service.closing}</p>}
 
-          {service.note && <p className={styles.note}>Note: {service.note}</p>}
+          {service.note && <p className={styles.note}>{tr('services_note_prefix')}{service.note}</p>}
         </div>
       )}
     </article>

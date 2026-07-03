@@ -9,7 +9,14 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PRIMARY_NAV, type NavItem } from '@/lib/data';
+import { useSite } from '@/lib/SiteContext';
 import styles from './Navbar.module.css';
+
+const NAV_KEYS: Record<string, 'nav_services' | 'nav_reviews' | 'nav_contact'> = {
+  Services: 'nav_services',
+  Reviews: 'nav_reviews',
+  Contact: 'nav_contact',
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -96,11 +103,13 @@ interface NavLinkProps {
 }
 
 function NavLink({ item, isOpen, onOpen }: NavLinkProps) {
+  const { tr } = useSite();
+  const label = NAV_KEYS[item.label] ? tr(NAV_KEYS[item.label]) : item.label;
   const hasChildren = !!item.children?.length;
   if (!hasChildren) {
     return (
       <li className={styles.navItem}>
-        <Link href={item.href} className={styles.navLink}>{item.label}</Link>
+        <Link href={item.href} className={styles.navLink}>{label}</Link>
       </li>
     );
   }
@@ -116,7 +125,7 @@ function NavLink({ item, isOpen, onOpen }: NavLinkProps) {
         aria-expanded={isOpen}
         onClick={() => onOpen(!isOpen)}
       >
-        {item.label}
+        {label}
         <Chevron />
       </button>
       <ul className={`${styles.dropdown} ${isOpen ? styles.dropdownOpen : ''}`}>
@@ -131,13 +140,15 @@ function NavLink({ item, isOpen, onOpen }: NavLinkProps) {
 }
 
 function MobileNavItem({ item, onNavigate }: { item: NavItem; onNavigate: () => void }) {
+  const { tr } = useSite();
+  const label = NAV_KEYS[item.label] ? tr(NAV_KEYS[item.label]) : item.label;
   const [open, setOpen] = useState(false);
   const hasChildren = !!item.children?.length;
   return (
     <li className={styles.mobileItem}>
       <div className={styles.mobileRow}>
         <Link href={item.href} onClick={onNavigate} className={styles.mobileLink}>
-          {item.label}
+          {label}
         </Link>
         {hasChildren && (
           <button

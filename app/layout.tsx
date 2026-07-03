@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat, Open_Sans } from 'next/font/google';
 import './globals.css';
+import { SiteProvider } from '@/lib/SiteContext';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -45,11 +46,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <body>
-        <a href="#main" className="sr-skip">Skip to main content</a>
-        <TopBar />
-        <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
+        <SiteProvider>
+          <a href="#main" className="sr-skip">Skip to main content</a>
+          <TopBar />
+          <Navbar />
+          <main id="main">{children}</main>
+          <Footer />
+        </SiteProvider>
       </body>
     </html>
   );
