@@ -37,7 +37,7 @@ export default function Footer() {
           <div className={styles.social}>
             <a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61566849680224" target="_blank" rel="noreferrer noopener"><FbIcon /></a>
             <a aria-label="TikTok" href="https://www.tiktok.com/@pure.pool.servicess?_r=1&_t=ZT-97i9nRfJ4yT" target="_blank" rel="noreferrer noopener"><TkIcon /></a>
-            <a aria-label="Email" href="mailto:Pure.pool.servicess@gmail.com"><GmailIcon /></a>
+            <a aria-label="Email" href={CONTACT.emailHref}><GmailIcon /></a>
           </div>
         </div>
       </div>

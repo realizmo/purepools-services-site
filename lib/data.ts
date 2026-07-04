@@ -157,8 +157,8 @@ export const CONTACT = {
   phoneHref: 'tel:+15162017929',
   phoneEs: '+1 (516) 201-7929',
   phoneEsHref: 'tel:+15162017929',
-  email: 'service@purepoolsservices.com',
-  emailHref: 'mailto:service@purepoolsservices.com',
+  email: 'pure.pool.servicess@gmail.com',
+  emailHref: 'mailto:pure.pool.servicess@gmail.com',
   addressLine1: '94 North Industry Ct.',
   addressLine2: 'Deer Park, NY 11729',
   mapsHref:

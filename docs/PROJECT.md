@@ -127,7 +127,7 @@ Proxies Google Places Details API.
 | Service area | Nassau & Suffolk counties, Long Island, NY |
 | Phone (EN) | +1 (516) 201-7929 |
 | Phone (ES) | +1 (516) 201-7929 |
-| Email | service@purepoolsservices.com |
+| Email | pure.pool.servicess@gmail.com |
 | Address | 94 North Industry Ct., Deer Park, NY 11729 |
 
 ### Services & Pricing
