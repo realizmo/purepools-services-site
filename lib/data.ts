@@ -153,8 +153,8 @@ export const REVIEWS: Review[] = [
 ];
 
 export const CONTACT = {
-  phone: '+1 (516) 902-1762',
-  phoneHref: 'tel:+15169021762',
+  phone: '+1 (516) 201-7929',
+  phoneHref: 'tel:+15162017929',
   phoneEs: '+1 (516) 201-7929',
   phoneEsHref: 'tel:+15162017929',
   email: 'service@purepoolsservices.com',
